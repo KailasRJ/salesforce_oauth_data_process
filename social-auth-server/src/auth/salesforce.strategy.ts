@@ -38,6 +38,8 @@ export class SalesforceStrategy extends PassportStrategy(Strategy, 'forcedotcom'
 
     
 
+    // Create a new data
+
     const data = {
      Name: 'Injected Data'
      };
@@ -49,12 +51,13 @@ export class SalesforceStrategy extends PassportStrategy(Strategy, 'forcedotcom'
   }
 
   console.log('Data inserted successfully:', result);
+   });
 
-});
 
+   // Update the data
 
     const updatedData = {
-      Name: 'Updated the name of singapore', // Replace with the updated value for the FirstName field
+      Name: 'Updated the name', // Replace with the updated value for the FirstName field
     };
 
     //   Set the record ID you want to update
@@ -69,17 +72,6 @@ export class SalesforceStrategy extends PassportStrategy(Strategy, 'forcedotcom'
 
     console.log('Record updated successfully');
   });
-
-    //   // Example: Fetch user's details (Change this according to your requirements)
-    //   const userInfo = await conn.sobject('User').retrieve(profile.id, ['Id', 'Name', 'Email']);
-
-    //   // Assuming you have a user model, you can create or fetch the user from the database and return it
-    //   const user = {
-    //     id: userInfo.Id,
-    //     name: userInfo.Name,
-    //     email: userInfo.Email,
-    //     // Add more user properties as needed
-    //   };
 
       return done(null, profile);
   }
